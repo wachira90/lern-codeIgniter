@@ -24,3 +24,10 @@ echo "<br>";
 echo "Content last changed: ".date("F d Y H:i:s.", filemtime("webdictionary.txt"));
 ?>
 ````
+
+# setting session path
+
+````
+$config['sess_save_path'] = sys_get_temp_dir();
+$config['sess_save_path'] = BASEPATH . "sessions";
+````
