@@ -31,3 +31,9 @@ echo "Content last changed: ".date("F d Y H:i:s.", filemtime("webdictionary.txt"
 $config['sess_save_path'] = sys_get_temp_dir();
 $config['sess_save_path'] = BASEPATH . "sessions";
 ````
+
+# show sess_save_path
+
+````
+echo $this->config->config['sess_save_path'];
+````
