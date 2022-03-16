@@ -1,5 +1,28 @@
 # delete old session
 
+## production
+````
+public function clear_expire_session()
+{
+// $files = glob($this->config->config['sess_save_path'] . "*.txt");
+$files = glob($this->config->config['sess_save_path'] . "/ci_session*");
+// print_r( $files);
+$now   = time();
+
+	foreach ($files as $file) {
+		if (is_file($file)) {
+			if ($now - filemtime($file) >= $this->config->config['sess_expiration']) {
+				unlink($file);
+				// echo "|\n";
+				// echo $file;
+			}
+		}
+	}
+	echo "success";
+}
+````
+
+## original
 ````
 <?php
 $files = glob($config['sess_save_path'] . "*");
